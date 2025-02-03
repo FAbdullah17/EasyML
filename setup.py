@@ -20,7 +20,9 @@ setup(
         "transformers",
         "xgboost",
         "matplotlib",
-        "seaborn"
+        "seaborn",
+        "lightgbm",
+        "catboost"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

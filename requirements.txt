@@ -7,3 +7,5 @@ transformers
 xgboost
 matplotlib
 seaborn
+lightgbm
+catboost
