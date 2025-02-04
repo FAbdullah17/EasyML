@@ -76,7 +76,7 @@ class DeepLearningModels:
                 Dense(32, activation='relu'),
                 Dense(1, activation='sigmoid')
             ])
-        model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+        model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
         return model
 
     def train(self, X_train, y_train, epochs=10, batch_size=32):

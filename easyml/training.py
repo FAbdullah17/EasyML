@@ -37,10 +37,19 @@ class DeepTrainer:
         self.batch_size = batch_size
         self.model = DeepLearningModels(input_shape, model_type).model
 
-    def train(self, X_train, y_train, X_test, y_test):
-        self.model.fit(X_train, y_train, epochs=self.epochs, batch_size=self.batch_size, validation_data=(X_test, y_test), verbose=1)
-        loss, accuracy = self.model.evaluate(X_test, y_test)
-        print(f"Test Accuracy: {accuracy}")
+    def train(self, X_train, y_train, X_test, y_test, callbacks=None):
+        """Train the deep learning model."""
+        if callbacks is None:
+            callbacks = []  # Default empty list if no callbacks provided
+
+        self.model.fit(
+            X_train, y_train, 
+            epochs=self.epochs, 
+            batch_size=self.batch_size, 
+            validation_data=(X_test, y_test), 
+            verbose=1,
+            callbacks=callbacks  # <-- Pass callbacks here
+        )
         return self.model
 
 class PyTorchTrainer:
