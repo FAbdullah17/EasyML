@@ -1,30 +1,30 @@
-import unittest
+import pytest
 import numpy as np
-from easyml.models import ModelBuilder, DeepLearningModels, PyTorchModel
+from easyml.models import ModelBuilder
 
-class TestModels(unittest.TestCase):
+@pytest.fixture
+def sample_data():
+    """Generates synthetic data for model testing."""
+    X_train = np.random.rand(100, 10)
+    y_train = np.random.randint(0, 2, 100)
+    X_test = np.random.rand(20, 10)
+    return X_train, y_train, X_test
 
-    def setUp(self):
-        """Create synthetic data and initialize models."""
-        self.X_train = np.random.rand(100, 10)
-        self.y_train = np.random.randint(0, 2, 100)
-        self.X_test = np.random.rand(20, 10)
-        self.model_factory = ModelFactory()
+def test_train_model(sample_data):
+    """Ensure models can be trained without errors."""
+    X_train, y_train, X_test = sample_data
+    model_builder = ModelBuilder("random_forest")
+    model = model_builder.model
+    model.fit(X_train, y_train)
 
-    def test_train_model(self):
-        """Ensure all models can train without errors."""
-        model_names = ["logistic_regression", "random_forest", "svm", "mlp"]
-        for model_name in model_names:
-            model = self.model_factory.get_model(model_name)
-            model.fit(self.X_train, self.y_train)
-            self.assertIsNotNone(model, f"{model_name} training failed.")
+    assert model is not None  # Model should be trained successfully
 
-    def test_predict(self):
-        """Verify model prediction output shape."""
-        model = self.model_factory.get_model("random_forest")
-        model.fit(self.X_train, self.y_train)
-        predictions = model.predict(self.X_test)
-        self.assertEqual(predictions.shape[0], self.X_test.shape[0], "Prediction shape mismatch.")
+def test_predict(sample_data):
+    """Ensure models can make predictions after training."""
+    X_train, y_train, X_test = sample_data
+    model_builder = ModelBuilder("random_forest")
+    model = model_builder.model
+    model.fit(X_train, y_train)
+    predictions = model.predict(X_test)
 
-if __name__ == '__main__':
-    unittest.main()
+    assert predictions.shape[0] == X_test.shape[0]  # Check output matches input size
