@@ -31,5 +31,5 @@ setup(
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Topic :: Software Development :: Libraries"
     ],
-    python_requires='>=3.8,<4.0',
+    python_requires='>=3.8',
 )

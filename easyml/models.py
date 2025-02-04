@@ -87,7 +87,6 @@ class DeepLearningModels:
         """Make predictions."""
         return self.model.predict(X_test)
 
-# PyTorch Deep Learning Model
 class PyTorchModel(nn.Module):
     def __init__(self, input_dim):
         super(PyTorchModel, self).__init__()
@@ -102,3 +101,4 @@ class PyTorchModel(nn.Module):
         x = self.relu(self.fc2(x))
         x = self.sigmoid(self.fc3(x))
         return x
+    

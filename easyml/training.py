@@ -81,3 +81,4 @@ class PyTorchTrainer:
             accuracy = (predictions == y_test_tensor).sum().item() / y_test_tensor.size(0)
         print(f"Test Accuracy: {accuracy:.4f}")
         return self.model
+    

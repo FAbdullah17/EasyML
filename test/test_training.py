@@ -17,7 +17,7 @@ def test_trainer(sample_data):
     trainer = Trainer("random_forest")
     trained_model = trainer.train(X_train, y_train)
     
-    assert trained_model is not None  # Check model exists after training
+    assert trained_model is not None  
 
 def test_deep_trainer(sample_data):
     """Ensure DeepTrainer correctly trains a deep learning model."""
@@ -25,7 +25,7 @@ def test_deep_trainer(sample_data):
     deep_trainer = DeepTrainer(input_shape=10, model_type="lstm")
     trained_model = deep_trainer.train(X_train, y_train, X_test, y_test)
 
-    assert trained_model is not None  # Check model exists after training
+    assert trained_model is not None
 
 def test_pytorch_trainer(sample_data):
     """Ensure PyTorchTrainer correctly trains a PyTorch model."""
@@ -33,4 +33,4 @@ def test_pytorch_trainer(sample_data):
     pytorch_trainer = PyTorchTrainer(input_dim=10)
     trained_model = pytorch_trainer.train(X_train, y_train, X_test, y_test)
 
-    assert trained_model is not None  # Check model exists after training
+    assert trained_model is not None

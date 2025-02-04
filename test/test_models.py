@@ -17,7 +17,7 @@ def test_train_model(sample_data):
     model = model_builder.model
     model.fit(X_train, y_train)
 
-    assert model is not None  # Model should be trained successfully
+    assert model is not None  
 
 def test_predict(sample_data):
     """Ensure models can make predictions after training."""
@@ -27,4 +27,4 @@ def test_predict(sample_data):
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
 
-    assert predictions.shape[0] == X_test.shape[0]  # Check output matches input size
+    assert predictions.shape[0] == X_test.shape[0]  

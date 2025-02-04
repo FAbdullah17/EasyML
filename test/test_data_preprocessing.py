@@ -17,5 +17,5 @@ def test_fit_transform(sample_data):
     preprocessor = DataPreprocessor()
     processed_data = preprocessor.fit_transform(sample_data)
 
-    assert processed_data.shape[0] == sample_data.shape[0]  # Ensure all rows exist
-    assert not np.isnan(processed_data).any()  # Ensure no missing values after processing
+    assert processed_data.shape[0] == sample_data.shape[0]  
+    assert not np.isnan(processed_data).any()  
