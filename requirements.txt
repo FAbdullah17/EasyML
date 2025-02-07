@@ -9,4 +9,6 @@ matplotlib
 seaborn
 lightgbm
 catboost
+pytest
+flask
 -e .

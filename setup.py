@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="EasyML-Python",
+    name="EasyML-Package",
     version="0.1.0",
     author="Fahad Abdullah",
     author_email="fahadai.co@gmail.com",

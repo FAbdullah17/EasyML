@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from easyml.models import ModelBuilder
+from easymltool.models import ModelBuilder
 
 @pytest.fixture
 def sample_data():

@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from easyml.training import Trainer, DeepTrainer, PyTorchTrainer
+from easymltool.training import Trainer, DeepTrainer, PyTorchTrainer
 
 @pytest.fixture
 def sample_data():

@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report
-from easyml.models import ModelBuilder, DeepLearningModels, PyTorchModel
+from easymltool.models import ModelBuilder, DeepLearningModels, PyTorchModel
 import torch
 import torch.nn as nn
 import torch.optim as optim

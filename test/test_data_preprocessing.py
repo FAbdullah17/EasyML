@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
 import numpy as np
-from easyml.data_preprocessing import DataPreprocessor
+from easymltool.data_preprocessing import DataPreprocessor
 
 @pytest.fixture
 def sample_data():
